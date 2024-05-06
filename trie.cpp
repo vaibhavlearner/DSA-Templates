@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Node Class
 class Node
 {
 public:
@@ -36,19 +37,20 @@ public:
         cp--;
     }
 };
+
+// Trie Class
 class Trie
 {
 public:
-    Node *root;
+    Node *root; // declaration of node
     Trie()
     {
-        // Write your code here.
+        // Initialising
         root = new Node();
     }
 
     void insert(string &s)
     {
-        // Write your code here.
         Node *node = root;
         for (int i = 0; i < s.size(); i++)
         {
@@ -64,8 +66,7 @@ public:
 
     int countWordsEqualTo(string &s)
     {
-        // Write your code here.
-        Node *node = root;
+        Node *node = root; // dummy node so that root doesn't change
         for (int i = 0; i < s.size(); i++)
         {
             if (node->contain(s[i]))
@@ -82,7 +83,6 @@ public:
 
     int countWordsStartingWith(string &s)
     {
-        // Write your code here.
         Node *node = root;
         for (int i = 0; i < s.size(); i++)
         {
@@ -100,7 +100,6 @@ public:
 
     void erase(string &s)
     {
-        // Write your code here.
         Node *node = root;
         for (int i = 0; i < s.size(); i++)
         {
